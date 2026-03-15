@@ -1,0 +1,153 @@
+# ===========================
+# macOS 系统文件
+# ===========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.AppleDouble
+.LSOverride
+Icon
+
+# ===========================
+# Xcode 构建产物
+# ===========================
+build/
+DerivedData/
+# 打包发布产物
+dist/
+# 根目录残留的 .app 包（非构建系统标准路径）
+*.app
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+# Swift Package Manager
+.build/
+.swiftpm/
+*.resolved
+
+# CocoaPods（如将来引入）
+Pods/
+Podfile.lock
+
+# Carthage（如将来引入）
+Carthage/Build/
+
+# ===========================
+# AI / Claude 相关
+# ===========================
+# Claude Code 本地配置与会话缓存
+.claude/
+claude_history/
+*.claude_session
+*.claude_cache
+
+# Claude / GPT / Gemini API 密钥及配置
+.env
+.env.*
+!.env.example
+*.env
+api_keys.json
+api_keys.yaml
+secrets.json
+secrets.yaml
+secrets.toml
+config.local.*
+local.config.*
+
+# OpenAI / Anthropic / Google AI 相关
+openai_key*
+anthropic_key*
+gemini_key*
+*_api_key*
+*_secret_key*
+
+# AI 模型本地文件（大文件）
+*.gguf
+*.ggml
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.pkl
+models/
+checkpoints/
+weights/
+
+# AI 生成的临时输出文件
+ai_output/
+generated/
+llm_cache/
+
+# ===========================
+# 隐私 / 凭据 / 敏感信息
+# ===========================
+# 证书与密钥
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.p8
+*.mobileprovision
+*.provisionprofile
+AuthKey_*.p8
+
+# macOS Keychain 导出
+*.keychain
+*.keychain-db
+
+# SSH
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+*.ppk
+
+# 个人信息 / 本地数据
+*.sqlite
+*.sqlite3
+*.db
+local_data/
+personal/
+private/
+
+# 日志（可能含敏感信息）
+*.log
+logs/
+*.log.*
+
+# ===========================
+# 编辑器 / IDE
+# ===========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cursor/
+
+# ===========================
+# 其他
+# ===========================
+# 临时文件
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
