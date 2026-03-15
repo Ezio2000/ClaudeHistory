@@ -14,12 +14,13 @@
 
 ## 安装
 
-### 方式一：直接下载（推荐）
+### 方式一：从预发布版本下载（推荐）
 
-1. 下载 `dist/ClaudeHistory.dmg`
-2. 双击打开 DMG 文件
-3. 将 `ClaudeHistory.app` 拖入 `Applications` 文件夹
-4. 在启动台或 Finder 中打开应用
+1. 前往 [Releases](https://github.com/Ezio2000/ClaudeHistory/releases) 页面
+2. 下载最新版本的 `ClaudeHistory.dmg`
+3. 双击打开 DMG 文件
+4. 将 `ClaudeHistory.app` 拖入 `Applications` 文件夹
+5. 在启动台或 Finder 中打开应用
 
 > **首次打开提示**：macOS 可能会提示"无法验证开发者"。请前往「系统设置 → 隐私与安全性」，找到对应提示后点击「仍要打开」即可。
 
@@ -29,7 +30,7 @@
 
 ```bash
 # 克隆仓库
-git clone <repo-url>
+git clone https://github.com/Ezio2000/ClaudeHistory.git
 cd ClaudeHistory
 
 # 构建 Release 版本
@@ -41,6 +42,11 @@ xcodebuild -project ClaudeHistory.xcodeproj \
 
 # 运行
 open build/Build/Products/Release/ClaudeHistory.app
+
+# 或打包为 DMG（可选）
+mkdir -p dist
+cp -R build/Build/Products/Release/ClaudeHistory.app dist/
+hdiutil create -volname "ClaudeHistory" -srcfolder dist -ov -format UDZO -imagekey zlib-level=9 dist/ClaudeHistory.dmg
 ```
 
 ## 使用指南
@@ -101,12 +107,12 @@ ClaudeHistory/
 │   ├── Session.swift           # 数据模型（ClaudeSession、ClaudeMessage）
 │   ├── SessionViewModel.swift  # 业务逻辑，读取/搜索/删除会话
 │   └── Info.plist
-├── dist/
-│   └── ClaudeHistory.dmg      # 打包好的安装文件
 ├── .gitignore
-├── CLAUDE.md
+├── CLAUDE.md                   # 开发文档（架构、构建命令、关键设计点）
 └── README.md
 ```
+
+> **注**：`build/` 和 `dist/` 目录为本地构建产物，不入库。预编译的 DMG 发布在 [Releases](https://github.com/Ezio2000/ClaudeHistory/releases)。
 
 ## 系统要求
 
